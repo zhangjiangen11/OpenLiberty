@@ -59,8 +59,8 @@ func _read_ide_line(section: String, tokens: Array[String]):
 			var parent := tokens[0].to_int()
 			var position := Vector3(
 				tokens[1].to_float(),
-				tokens[2].to_float(),
-				tokens[3].to_float() )
+				tokens[3].to_float(),
+				-tokens[2].to_float() )
 			var color := Color(
 				tokens[4].to_float() / 255,
 				tokens[5].to_float() / 255,
@@ -86,16 +86,16 @@ func _read_ipl_line(section: String, tokens: Array[String]):
 			placement.model_name = tokens[1].to_lower()
 			placement.position = Vector3(
 				tokens[2].to_float(),
-				tokens[3].to_float(),
-				tokens[4].to_float(), )
+				tokens[4].to_float(),
+				-tokens[3].to_float(), )
 			placement.scale = Vector3(
 				tokens[5].to_float(),
-				tokens[6].to_float(),
-				tokens[7].to_float(), )
+				tokens[7].to_float(),
+				tokens[6].to_float(), )
 			placement.rotation = Quaternion(
 				-tokens[8].to_float(),
-				-tokens[9].to_float(),
 				-tokens[10].to_float(),
+				-tokens[9].to_float(),
 				tokens[11].to_float(), )
 			placements.append(placement)
 
@@ -115,7 +115,6 @@ func _read_map_data(path: String, line_handler: Callable) -> void:
 
 func clear_map() -> void:
 	map = Node3D.new()
-	map.rotation.x = deg_to_rad(-90.0)
 
 func spawn_placement(ipl: ItemPlacement) -> Node3D:
 	return spawn(ipl.id, ipl.model_name, ipl.position, ipl.scale, ipl.rotation)

@@ -34,8 +34,8 @@ class TBase:
 	func read_vector3(file: FileAccess) -> Vector3:
 		var result := Vector3()
 		result.x = file.get_float()
-		result.y = file.get_float()
 		result.z = file.get_float()
+		result.y = file.get_float()
 		return result
 
 class TBounds extends TBase:
@@ -88,6 +88,7 @@ class TVertex extends TBase:
 	
 	func _init(file: FileAccess):
 		position = read_vector3(file)
+		position.z = -position.z
 
 class TFace extends TBase:
 	var a: int

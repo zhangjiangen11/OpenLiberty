@@ -4,7 +4,6 @@ extends Node
 var suzanne := preload("res://prefabs/suzanne.tscn")
 
 func _ready() -> void:
-	world.rotation.x = deg_to_rad(-90.0)
 	var start := Time.get_ticks_msec()
 	var target = MapBuilder.placements.size()
 	var count := 0
