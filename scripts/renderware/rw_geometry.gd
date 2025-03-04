@@ -110,17 +110,17 @@ func _init(file: FileAccess):
 		morph_t.has_normals = file.get_32() != 0
 		if morph_t.has_vertices:
 			for j in vert_count:
-				var vert := Vector3()
-				vert.x = file.get_float()
-				vert.y = file.get_float()
-				vert.z = file.get_float()
-				morph_t.vertices.append(vert)
+				# Convert GTA to Godot coordinate system
+				var x := file.get_float()
+				var y := file.get_float()
+				var z := file.get_float()
+				morph_t.vertices.append(Vector3(x, z, -y))
 		if morph_t.has_normals:
 			for j in vert_count:
 				var normal := Vector3()
 				normal.x = file.get_float()
-				normal.y = file.get_float()
 				normal.z = file.get_float()
+				normal.y = file.get_float()
 				morph_t.normals.append(normal)
 		morph_targets.append(morph_t)
 	material_list = RWMaterialList.new(file)

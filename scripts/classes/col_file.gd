@@ -32,11 +32,12 @@ func _init(file: FileAccess):
 
 class TBase:
 	func read_vector3(file: FileAccess) -> Vector3:
-		var result := Vector3()
-		result.x = file.get_float()
-		result.y = file.get_float()
-		result.z = file.get_float()
-		return result
+		# GTA3 uses a different coordinate system, so we need to convert
+		# the coordinates to Godot's coordinate system.
+		var x := file.get_float()
+		var y := file.get_float()
+		var z := file.get_float()
+		return Vector3(x, z, -y)
 
 class TBounds extends TBase:
 	var radius: float
