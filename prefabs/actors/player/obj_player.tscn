@@ -1,6 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://yo0220jx0v3r"]
 
-[ext_resource type="Script" path="res://scripts/gameplay/player/obj_player.gd" id="1_7ctcy"]
+[sub_resource type="Resource" id="Resource_3xqip"]
+metadata/__load_path__ = "res://scripts/gameplay/player/obj_player.gd"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl83o"]
 resource_name = "Material.001"
@@ -110,7 +111,7 @@ bind/24/pose = Transform3D(0.998213, -1.72623, -0.153902, 0.466768, 0.0967433, 1
 radius = 0.37
 
 [node name="obj_player" type="CharacterBody3D"]
-script = ExtResource("1_7ctcy")
+script = SubResource("Resource_3xqip")
 
 [node name="mesh" type="Node3D" parent="."]
 

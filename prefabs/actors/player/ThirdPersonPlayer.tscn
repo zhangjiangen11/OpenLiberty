@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=4 uid="uid://cr2ersq7g6q6f"]
 
-[ext_resource type="Script" path="res://addons/Third-Person-Controller-main/Scripts/Characters/Player.gd" id="1_hn6di"]
-[ext_resource type="Script" path="res://addons/Third-Person-Controller-main/Scripts/Characters/SpringArmPivot.gd" id="2_f8ihf"]
+[ext_resource type="Script" uid="uid://cv58ppu7g0qet" path="res://addons/Third-Person-Controller-main/Scripts/Characters/Player.gd" id="1_hn6di"]
+[ext_resource type="Script" uid="uid://doje8cwbtkiys" path="res://addons/Third-Person-Controller-main/Scripts/Characters/SpringArmPivot.gd" id="2_f8ihf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5or4"]
 resource_name = "Mat_Joints"
@@ -3223,11 +3223,11 @@ tracks/83/keys = PackedFloat32Array(0, 1, -2.58624e-06, -3.96691e-07, -3.96689e-
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ns7eh"]
 _data = {
-"Air": SubResource("Animation_jas7c"),
-"Idle": SubResource("Animation_s84hr"),
-"Run": SubResource("Animation_4f7rs"),
-"T-Pose": SubResource("Animation_l7pua"),
-"Walk": SubResource("Animation_yr6iu")
+&"Air": SubResource("Animation_jas7c"),
+&"Idle": SubResource("Animation_s84hr"),
+&"Run": SubResource("Animation_4f7rs"),
+&"T-Pose": SubResource("Animation_l7pua"),
+&"Walk": SubResource("Animation_yr6iu")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dfvqk"]
